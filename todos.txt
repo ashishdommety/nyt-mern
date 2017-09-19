@@ -1,5 +1,5 @@
 1) Create models - done
-2) Create mongoose connection
+2) Create mongoose connection - done
 3) constructor with api routes (using axios)
 4) utils for front end (with axios request)
 5) Send request to nytimes api when the form in submitted

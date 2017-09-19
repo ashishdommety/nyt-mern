@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 
 // Create article schema
 const ArticleSchema = new Schema({
-  headline: {
+  title: {
     type: String,
     required: true
   },
-  summary: {
+  date: {
     type:String,
     required:true
   },
@@ -20,13 +20,13 @@ const ArticleSchema = new Schema({
   saved:{
     type:Boolean,
     default:false
-  },
+  }
   // This only saves one note's ObjectId, ref refers to the Note model
     //the note key is an array so multiple notes can be added
-  note: [{
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  }]
+  // note: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Note"
+  // }]
 
 });
 
