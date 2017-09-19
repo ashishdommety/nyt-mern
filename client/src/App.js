@@ -27,19 +27,9 @@ class App extends Component {
         <hr/>
         <Search/>
         <hr/>
-        <Results>
-          {this.state.image.map((resultStuff) => (
-            <ResultItem/>
-          ))}
-        </Results>
-        <div>
-          {this.state.image.map((resultStuff) => (
-            <ResultItem/>
-          ))}
-        </div>
+        <Results/>
         <hr/>
         <Saved/>
-          <SavedItem/>
         <hr/>
       </div>
     );
