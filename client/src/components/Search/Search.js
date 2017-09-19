@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import './Search.css';
 
 class Search extends Component{
   render(){
     return(
+      <div className='search'>
       <div>
         <h2>Search</h2>
         <form>
+        <div>
           <p>Topic</p>
           <input
             value='Topic'
@@ -13,6 +16,8 @@ class Search extends Component{
             type="text"
             placeholder="Today's topic"
           />
+        </div>
+        <div>
           <p>Start Year</p>
           <input
             value='start'
@@ -20,6 +25,8 @@ class Search extends Component{
             type="text"
             placeholder="1985"
           />
+        </div>
+        <div>
           <p>End Year</p>
           <input
             value='end'
@@ -27,8 +34,10 @@ class Search extends Component{
             type="text"
             placeholder="2017"
           />
-          <button>Submit</button>
+        </div>
+          <button className="search_button">Submit</button>
         </form>
+      </div>
       </div>
     )
   }
