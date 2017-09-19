@@ -2,6 +2,15 @@ import React, {Component} from 'react';
 import './Search.css';
 
 class Search extends Component{
+  constructor() {
+    super();
+    // Setting initial state to store the input values
+    this.state = {
+
+    };
+    // Binding the event listeners which we will pass as props
+  }
+
   render(){
     return(
       <div className='search'>
