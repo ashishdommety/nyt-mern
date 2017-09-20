@@ -6,12 +6,20 @@ class Search extends Component{
     super();
     // Setting initial state to store the input values
     this.state = {
-      topic:'news article',
-      startYear:'start year',
+      topic:'',
+      startYear:'',
       endYear:''
     }
     // Binding the event listeners which we will pass as props
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]:value
+    });
+  };
 
   render(){
     return(
@@ -22,7 +30,8 @@ class Search extends Component{
         <div>
           <p>Topic</p>
           <input
-            value='Topic'
+            value={this.state.topic}
+            onChange={this.handleInputChange}
             name="topic"
             type="text"
             placeholder="Today's topic"
@@ -31,8 +40,9 @@ class Search extends Component{
         <div>
           <p>Start Year</p>
           <input
-            value='start'
-            name="start year"
+            value={this.state.startYear}
+            onChange={this.handleInputChange}
+            name="startYear"
             type="text"
             placeholder="1985"
           />
@@ -40,8 +50,9 @@ class Search extends Component{
         <div>
           <p>End Year</p>
           <input
-            value='end'
-            name="end year"
+            value={this.state.endYear}
+            onChange={this.handleInputChange}
+            name="endYear"
             type="text"
             placeholder="2017"
           />
