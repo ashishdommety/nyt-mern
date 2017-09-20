@@ -6,8 +6,10 @@ class Search extends Component{
     super();
     // Setting initial state to store the input values
     this.state = {
-
-    };
+      topic:'news article',
+      startYear:'start year',
+      endYear:''
+    }
     // Binding the event listeners which we will pass as props
   }
 
