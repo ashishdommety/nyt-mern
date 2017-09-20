@@ -10,8 +10,8 @@ const ArticleSchema = new Schema({
     required: true
   },
   date: {
-    type:String,
-    required:true
+    type:Date,
+    default:Date.now
   },
   link: {
     type: String,
