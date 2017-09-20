@@ -1,8 +1,14 @@
 import axios from 'axios';
 
 export default{
-  getArticles: function(query){
-    return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=fb06d804a7934525baf1d5cae47bb138&q=smoking&begin_date=18900101&end_date=20161231");
+  getArticles: function(query,startYear,endYear){
+    return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=fb06d804a7934525baf1d5cae47bb138&",{
+      params:{
+        q:query,
+        begin_date:startYear+'0101',
+        end_date:endYear+'1231'
+      }
+    });
   },
   getSavedArticles: function(){
     return axios.get("api/saved");

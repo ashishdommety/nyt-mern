@@ -4,7 +4,7 @@ class ResultItem extends Component{
   render(){
     return(
       <div className="row">
-        <h4 className="col-md-6">{this.props.headline}</h4>
+        <p className="col-md-6">{this.props.headline}</p>
         <div className="col-md-6">
           <button>Save</button>
         </div>

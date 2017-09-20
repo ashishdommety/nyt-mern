@@ -17,13 +17,14 @@ class Search extends Component{
   }
 
   componentWillMount(){
-    this.loadArticles();
+    // this.loadArticles();
   }
 
-  loadArticles = query => {
-    API.getArticles(query)
+  loadArticles = (query,startYear,endYear) => {
+    API.getArticles(query,startYear,endYear)
       .then(res =>
-        console.log(res.data.response.docs[0].headline.print_headline)
+        console.log('data:',res.data.response.docs[0])
+        // console.log('made request')
       ).catch(err => console.log(err));
   }
 
@@ -38,7 +39,8 @@ class Search extends Component{
     event.preventDefault();
     // console.log('you clicked me');
     window.location.pathname = "/results";
-    this.loadArticles()
+    // this.loadArticles(this.state.topic,this.state.startYear,this.state.endYear);
+
   }
 
   render(){

@@ -11,6 +11,7 @@ class App extends Component {
     super();
     // Setting initial state to store the input values
     this.state = {
+      fromChild:''
     };
     // Binding the event listeners which we will pass as props
   }
@@ -22,9 +23,7 @@ class App extends Component {
         <Header/>
         <hr/>
         <Route exact path = "/" component={Search}/>
-        {/*<Search/>*/}
-        <Route exact path = "/results" component={Results}/>
-        {/*<Results/>*/}
+        <Route exact path = "/results" component={Results} something="hello"/>
         <Route exact path = "/saved" component={Saved}/>
       </div>
       </Router>
