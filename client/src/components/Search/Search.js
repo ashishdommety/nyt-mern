@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import API from '../../utils/API';
 import './Search.css';
 
 class Search extends Component{
@@ -12,6 +13,18 @@ class Search extends Component{
     }
     // Binding the event listeners which we will pass as props
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  componentWillMount(){
+    this.loadArticles();
+  }
+
+  loadArticles = query => {
+    API.getArticles(query)
+      .then(res =>
+        console.log(res.data.response.docs[0].headline.print_headline)
+      ).catch(err => console.log(err));
   }
 
   handleInputChange = event => {
@@ -20,6 +33,13 @@ class Search extends Component{
       [name]:value
     });
   };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    // console.log('you clicked me');
+    window.location.pathname = "/results";
+    this.loadArticles()
+  }
 
   render(){
     return(
@@ -57,7 +77,10 @@ class Search extends Component{
             placeholder="2017"
           />
         </div>
-          <button className="search_button">Submit</button>
+          <button
+          onClick = {this.handleFormSubmit}
+          className="search_button"
+          >Submit</button>
         </form>
       </div>
       </div>
