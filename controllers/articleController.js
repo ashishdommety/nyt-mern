@@ -33,5 +33,6 @@ module.exports = {
   },
   allSavedArticles: function(req,res){
     console.log(req.body);
+    res.send("Here's all the saved articles from the back end");
   }
 };
