@@ -4,10 +4,10 @@ const articleController = require("../../controllers/articleController.js");
 //require the controllers
 
 //make all of your routes and how they affect the db
-router.route("/")
+router.route("/api/saved")
   .post(articleController.saveArticle);
 
-router.route("/:id")
+router.route("/api/saved")
   .delete(articleController.deleteArticle);
 
 module.exports = router;

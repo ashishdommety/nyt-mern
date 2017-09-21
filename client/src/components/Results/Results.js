@@ -7,14 +7,15 @@ class Results extends Component{
     super(props);
     // Setting initial state to store the input values
     this.state = {
-      articles: []
+      articles: this.props.articles,
+      test: ''
     };
     // Binding the event listeners which we will pass as props
     // console.log(this.props);
   }
 
   componentWillMount(){
-    this.loadArticles('trump','1990','2017');
+    // this.loadArticles('trump','1990','2017');
   }
 
   loadArticles = (query,startYear,endYear) => {
@@ -31,11 +32,11 @@ class Results extends Component{
     return(
       <div>
         <h2>Results</h2>
-        <h2>{this.props.something}</h2>
-        {this.state.articles.map((article) => {
+        <h2>{this.props.data.name}</h2>
+        {this.props.articles.map((article) => {
           return(
               <ResultItem
-              headline = {article.headline.main}/>
+              headline = {article.snippet}/>
           );
         })}
       </div>

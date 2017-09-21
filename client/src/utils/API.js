@@ -11,12 +11,12 @@ export default{
     });
   },
   getSavedArticles: function(){
-    return axios.get("api/saved");
+    return axios.get("/api/saved");
   },
-  saveArticles: function(){
-    return axios.post("api/saved");
+  saveArticle: function(){
+    return axios.post("/api/saved");
   },
-  deleteArticles: function(){
-    return axios.delete("api/saved");
+  deleteArticle: function(){
+    return axios.delete("/api/saved");
   }
 };
