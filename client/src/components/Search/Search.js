@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import API from '../../utils/API';
-// import Results from '../Results/Results';
-import ResultItem from '../Results/ResultItem';
+import Results from '../Results/Results';
 import './Search.css';
 
 class Search extends Component{
@@ -12,11 +11,7 @@ class Search extends Component{
       topic:'',
       startYear:'',
       endYear:'',
-      articles:[],
-      data:{
-          name:'Ashish',
-          age:24
-        }
+      articles:[]
     }
     // Binding the event listeners which we will pass as props
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -24,16 +19,15 @@ class Search extends Component{
   }
 
   componentWillMount(){
-    this.loadArticles('trump', '1985', '2017');
+    // this.loadArticles();
   }
 
   loadArticles = (query,startYear,endYear) => {
     API.getArticles(query,startYear,endYear)
       .then(res =>
-        this.setState({
-          article: res.data.response.docs
-        })
-        // console.log(res.data.response.docs)
+        this.sets
+        console.log('data:',res.data.response.docs[0])
+        // console.log('made request')
       ).catch(err => console.log(err));
   }
 
@@ -42,13 +36,14 @@ class Search extends Component{
     this.setState({
       [name]:value
     });
-  }
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
     // console.log('you clicked me');
     // window.location.pathname = "/results";
     this.loadArticles(this.state.topic,this.state.startYear,this.state.endYear);
+
   }
 
   render(){
@@ -97,16 +92,7 @@ class Search extends Component{
       </div>
       <hr/>
       <div className='col-md-6'>
-      <div>
-        <h2>Results</h2>
-        <h2>{this.state.articles}</h2>
-        {this.state.articles.map((article) => {
-          return(
-              <ResultItem
-              headline = {article.snippet}/>
-          );
-        })}
-      </div>
+        <Results/>
       </div>
     </div>
     )
