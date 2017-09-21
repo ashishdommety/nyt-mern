@@ -6,9 +6,7 @@ class ResultItem extends Component{
     super();
     // Setting initial state to store the input values
     this.state = {
-      // topic:'',
-      // startYear:'',
-      // endYear:''
+
     }
     // Binding the event listeners which we will pass as props
     this.handleSaveClick = this.handleSaveClick.bind(this);
