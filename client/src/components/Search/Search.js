@@ -95,11 +95,11 @@ class Search extends Component{
       <div className='results col-md-6'>
         <div>
           <h2>Results</h2>
-          <h2></h2>
           {this.state.articles.map((article) => {
             return(
                 <ResultItem
-                headline = {article.headline.main}/>
+                headline = {article.headline.main}
+                url = {article.web_url}/>
             );
           })}
         </div>
