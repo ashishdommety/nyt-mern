@@ -27,12 +27,26 @@ module.exports = {
     //mongoose query to save article goes here
   },
   deleteArticle: function(req,res){
-    console.log(`delete article: ${req.body}`);
-    // db.Article
-      //mongoose query to delete article goes here
+    console.log(req.body.params.articleId);
+    Article.findByIdAndRemove({_id:req.body.params.articleId}, (err,article) =>{
+      let response = {
+        message:"Successfully deleted article",
+        id: article._id
+      };
+      res.status(200).send(response);
+    });
   },
   allSavedArticles: function(req,res){
-    console.log(req.body);
-    res.send("Here's all the saved articles from the back end");
+    // console.log(req.body);
+    // res.send("Here's all the saved articles from the back end");
+    Article.find({}, function(error, data) {
+      if (error) {
+        res.send(error);
+      }
+      // Or send the data to the browser
+      else {
+        res.json(data);
+      }
+    })
   }
 };

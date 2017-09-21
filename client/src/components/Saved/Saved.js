@@ -7,6 +7,7 @@ class Saved extends Component{
     super();
     // Setting initial state to store the input values
     this.state = {
+      savedArticles:[]
     }
     // Binding the event listeners which we will pass as props
     // this.handleInputChange = this.handleInputChange.bind(this);
@@ -19,10 +20,10 @@ class Saved extends Component{
   showSavedArticles = () => {
     API.getSavedArticles()
       .then(res =>
-        console.log(res)
-        // this.setState({
-        //   articles: res.data.response.docs
-        // })
+        // console.log(res.data)
+        this.setState({
+          savedArticles: res.data
+        })
       ).catch(err => console.log(err));
   }
 
@@ -30,7 +31,18 @@ class Saved extends Component{
     return(
       <div>
         <h2>Saved</h2>
-        <SavedItem/>
+        {this.state.savedArticles.map((saved) =>{
+          return(
+            <SavedItem
+            headline = {saved.title}
+            url = {saved.link}
+            date = {saved.date}
+            buttonId = {saved._id}
+            />
+          )
+        }
+          )}
+
       </div>
     );
   }

@@ -18,6 +18,8 @@ class ResultItem extends Component{
     API.saveArticle(this.props)
       .then(res => console.log(res))
       .catch(err => console.log(err));
+
+    window.location.pathname = "/saved";
   }
 
   render(){

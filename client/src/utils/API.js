@@ -16,7 +16,11 @@ export default{
   saveArticle: function(articleData){
     return axios.post("/api/saved",articleData);
   },
-  deleteArticle: function(){
-    return axios.delete("/api/saved");
+  deleteArticle: function(id){
+    return axios.post("/api/delete",{
+      params:{
+        articleId:id
+      }
+    });
   }
 };
