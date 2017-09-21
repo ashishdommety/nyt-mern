@@ -1,6 +1,4 @@
 Todos:
 1) Styling
-2) Make post request to save in db when save button is clicked
+2) Write mongoose db queries in articleController.js
 3) Option to delete articles
-
-4) pass url to headline

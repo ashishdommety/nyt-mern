@@ -13,5 +13,8 @@ module.exports = {
     console.log(`delete article: ${req.body}`);
     // db.Article
       //mongoose query to delete article goes here
+  },
+  allSavedArticles: function(req,res){
+    console.log(req.body);
   }
 };
