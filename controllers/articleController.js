@@ -4,7 +4,7 @@ const db = require("../models/Article");
 //basic CRUD operations
 module.exports = {
   saveArticle: function(req,res){
-    console.log(`save article: ${req.body}`);
+    console.log(req.body);
     res.send("I'm a saved article");
     // db.Article
       //mongoose query to save article goes here

@@ -13,8 +13,8 @@ export default{
   getSavedArticles: function(){
     return axios.get("/api/saved");
   },
-  saveArticle: function(){
-    return axios.post("/api/saved");
+  saveArticle: function(articleData){
+    return axios.post("/api/saved",articleData);
   },
   deleteArticle: function(){
     return axios.delete("/api/saved");

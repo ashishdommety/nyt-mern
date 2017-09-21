@@ -1,8 +1,6 @@
-1) Create models - done
-2) Create mongoose connection - done
-3) constructor with api routes (using axios)
-4) utils for front end (with axios request)
-5) Send request to nytimes api when the form in submitted
-6) Append top 5 results to results component
-7) Make post request to save in db when save button is clicked
-8) Add notes and delete them.
+Todos:
+1) Styling
+2) Make post request to save in db when save button is clicked
+3) Option to delete articles
+
+4) pass url to headline

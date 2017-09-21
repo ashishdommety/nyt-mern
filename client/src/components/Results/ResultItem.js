@@ -17,7 +17,7 @@ class ResultItem extends Component{
   handleSaveClick = (event) => {
     event.preventDefault();
     // console.log('the api request will go here');
-    API.saveArticle()
+    API.saveArticle(this.props)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   }
