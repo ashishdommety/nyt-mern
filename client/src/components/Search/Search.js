@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import API from '../../utils/API';
-import Results from '../Results/Results';
+import ResultItem from '../Results/ResultItem';
 import './Search.css';
 
 class Search extends Component{
@@ -25,9 +25,10 @@ class Search extends Component{
   loadArticles = (query,startYear,endYear) => {
     API.getArticles(query,startYear,endYear)
       .then(res =>
-        this.sets
-        console.log('data:',res.data.response.docs[0])
-        // console.log('made request')
+        // console.log(res.data.response.docs)
+        this.setState({
+          articles: res.data.response.docs
+        })
       ).catch(err => console.log(err));
   }
 
@@ -91,8 +92,17 @@ class Search extends Component{
         </div>
       </div>
       <hr/>
-      <div className='col-md-6'>
-        <Results/>
+      <div className='results col-md-6'>
+        <div>
+          <h2>Results</h2>
+          <h2></h2>
+          {this.state.articles.map((article) => {
+            return(
+                <ResultItem
+                headline = {article.headline.main}/>
+            );
+          })}
+        </div>
       </div>
     </div>
     )
