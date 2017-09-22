@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Header.css';
 
 class Header extends Component{
   constructor(){
@@ -17,7 +18,7 @@ class Header extends Component{
   }
   render(){
     return(
-      <div>
+      <div className="headerSection">
         <h1>New York Times Article Scrubber!</h1>
         <h3> Search and save articles you love </h3>
         <button onClick={this.gotoHome}>Home</button>

@@ -1,4 +1,2 @@
 Todos:
-1) Styling
-2) Write mongoose db queries in articleController.js
-3) Option to delete articles
+2) Deploy to heroku

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import API from '../../utils/API';
+import './resultItem.css';
 
 class ResultItem extends Component{
   constructor() {
@@ -24,12 +25,14 @@ class ResultItem extends Component{
 
   render(){
     return(
-      <div className="row">
-        <a href={this.props.url}
+      <div className="row ResultItem">
+        <a
+        href={this.props.url}
         target="_blank"
-        className="col-md-6">{this.props.headline}</a>
+        className="col-md-6 links">{this.props.headline}</a>
         <div className="col-md-6">
-          <button onClick={this.handleSaveClick}>Save</button>
+          <button className="saveButton"
+          onClick={this.handleSaveClick}>Save</button>
         </div>
       </div>
     )

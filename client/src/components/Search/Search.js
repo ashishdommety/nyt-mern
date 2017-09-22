@@ -92,9 +92,9 @@ class Search extends Component{
         </div>
       </div>
       <hr/>
-      <div className='results col-md-6'>
+      <div className='results col-md-offset-1 col-md-5'>
         <div>
-          <h2>Results</h2>
+          <h2 id="resultText">Results</h2>
           {this.state.articles.map((article) => {
             return(
                 <ResultItem

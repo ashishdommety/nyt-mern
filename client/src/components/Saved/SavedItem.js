@@ -30,11 +30,12 @@ class SavedItem extends Component{
 
   render(){
     return(
-      <div className="row">
+      <div className="row savedThing">
         <h4 className="col-md-4">
-        <a href={this.props.url} target="_blank">{this.props.headline}
+        <a className="links"
+        href={this.props.url} target="_blank">{this.props.headline}
         </a></h4>
-        <p className="col-md-4">date: {this.props.date}</p>
+        <p className="col-md-4">Time-stamp: <br/>{this.props.date}</p>
         <div className="col-md-4">
           <button id={this.props.buttonId}
           onClick={this.deleteSavedArticles}>Remove</button>

@@ -1,6 +1,10 @@
 .search {
   text-align: center;
   /*background-color: blue;*/
+  background-color: #92B4F4;
+  color:white;
+  border-radius: 10px;
+  padding-top: 40px;
 }
 
 .search_button{
@@ -12,4 +16,8 @@
   width:100%;
   height:400px;
   overflow-y: scroll;
+}
+
+#resultText{
+  color:#4472CA;
 }

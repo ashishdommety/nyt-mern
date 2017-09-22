@@ -30,7 +30,7 @@ class Saved extends Component{
   render(){
     return(
       <div>
-        <h2>Saved</h2>
+        <h2 id="savedTitle">Saved</h2>
         {this.state.savedArticles.map((saved) =>{
           return(
             <SavedItem
